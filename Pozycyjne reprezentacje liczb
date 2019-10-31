@@ -1,0 +1,80 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+/*
+Liczba
+n
+zapisana w systemie o podstawie
+p
+
+Czwiczenie c++
+Alena Bohun
+
+*/
+
+
+void zamiana(long long n, int p)
+{
+    if(n>0)
+    {
+        zamiana(n/p, p);
+        
+        if(n%p>9)
+        ////dla systemów o podstawie większej niż 9 cyfry są literami
+        switch (n%p)
+        {
+            case 10:
+            cout << "A" << endl;
+            break;
+            
+            case 11: 
+            cout << "B" << endl;
+            break;
+            
+            case 12:
+            cout << "C" << endl;
+            break;
+            
+            case 13:
+            cout << "D" << endl;
+            break;
+            
+            case 14:
+            cout << "E" << endl;
+            break;
+            
+            case 15:
+            cout << "F" << endl;
+            break;
+        }
+        else
+        cout << n%p;
+    }
+            
+            
+    }
+
+int main(){
+    
+    int p;
+    long long n;
+    
+    
+    cout << " Podaj liczbę i podstawe systemu: ";
+    cin >> n >> p;
+    
+    cout << "Liczba " << n << " w systemie " <<p<< " : ";
+    
+    if(n==0)
+    cout << 0;
+    else
+    zamiana(n,p);
+    
+    cout << endl;
+    
+    system ("pause");
+    return 0;
+}
+
+// podejście rekurencyjne
+    
